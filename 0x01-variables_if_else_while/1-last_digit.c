@@ -24,6 +24,7 @@ int getlastdigit(int n)
  *
  * Return: a string
  */
+
 void cdt(int lastdigit)
 {
 	if (lastdigit > 5)
