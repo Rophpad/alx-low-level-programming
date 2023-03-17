@@ -6,12 +6,12 @@
  *
  * Return: 0 (Seccess)
  */
-int main()
+int main(void)
 {
 	int i;
 	char ch;
 
-	for (i = 48; i < 57; i++)
+	for (i = 48; i <= 57; i++)
 	{
 		putchar(i);
 	}
