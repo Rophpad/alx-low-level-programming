@@ -19,12 +19,15 @@ int getlastdigit(int n)
  * ctd - Prints a strings following some conditions
  * @lastdigit: is the return of the function getlastdigit
  *
+ * Description: This function prints a text after comparing
+ * the value of lastdigit with 6, 0 and 5
+ *
  * Return: a string
  */
 void cdt(int lastdigit)
 {
 	if (lastdigit > 5)
-        	printf("and is greater than 5\n");
+		printf("and is greater than 5\n");
 	else if (lastdigit != 0 && lastdigit < 6)
 		printf("and is less than 6 and not 0\n");
 	else
