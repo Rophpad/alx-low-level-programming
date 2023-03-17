@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 /**
- * main - Print whether the number stored in the variable n is positive or negative
+ * main - Print whether the number stored in the
+ * variable n is positive or negative
  *
  * Return: 0 (Success)
  */
@@ -23,7 +24,8 @@ int main(void)
 			switch (n < 0)
 			{
 				case (1):
-					printf("%d is negative\n", n);
+					printf("%d is negative
+						\n", n);
 					break;
 				case (0):
 					printf("%d is zero\n", n);
