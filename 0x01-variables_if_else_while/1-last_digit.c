@@ -16,7 +16,7 @@ int getlastdigit(int n)
 }
 
 /**
- * ctd - Prints a strings following some conditions
+ * cdt - Prints a strings following some conditions
  * @lastdigit: is the return of the function getlastdigit
  *
  * Description: This function prints a text after comparing
@@ -24,7 +24,6 @@ int getlastdigit(int n)
  *
  * Return: a string
  */
-
 void cdt(int lastdigit)
 {
 	if (lastdigit > 5)
