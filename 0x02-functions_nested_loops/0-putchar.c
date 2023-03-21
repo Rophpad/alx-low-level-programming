@@ -9,9 +9,6 @@
  */
 int main(void)
 {
-	char text[] = "_putchar";
-	int size = sizeof(text);
-
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
