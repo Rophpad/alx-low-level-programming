@@ -5,11 +5,12 @@
  */
 void jack_bauer(void)
 {
-	char h, min;
+	char h;
+	char min;
 
 	for (h = '0'; h < '24'; h++)
 	{
-		if (h < 10)
+		if (h < '10')
 		{
 			_putchar('0');
 			_putchar(h);
@@ -19,9 +20,9 @@ void jack_bauer(void)
 			_putchar(h);
 		}
 		_putchar(':');
-		for (min = '0'; min < 60; min++)
+		for (min = '0'; min < '60'; min++)
 		{
-			if (min < 10)
+			if (min < '10')
 			{
 				_putchar('0');
 				_putchar(min);
