@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_last_digit - print the last digit of a number
  * @number: is the number
@@ -7,7 +9,9 @@
 int print_last_digit(int number)
 {
 	int lastdigit = number % 10;
-	if (number < 0)
+
+	if (lastdigit < 0)
 		lastdigit = -1 * lastdigit;
+	_putchar(lastdigit + 48);
 	return (lastdigit);
 }
