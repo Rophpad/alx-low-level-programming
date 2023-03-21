@@ -15,7 +15,7 @@ int _abs(int number)
 	}
 	else
 	{
-		absvalue = -1*number;
+		absvalue = -1 * number;
 	}
 	return (absvalue);
 }
