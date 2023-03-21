@@ -10,8 +10,12 @@ int _abs(int number)
 	int absvalue;
 
 	if (number >= 0)
+	{
 		absvalue = number;
+	}
 	else
-		absvalue = -1*number
+	{
+		absvalue = -1*number;
+	}
 	return (absvalue);
 }
