@@ -2,9 +2,12 @@
  * print_last_digit - print the last digit of a number
  * @number: is the number
  *
- * Return: number%10
+ * Return: the result stored in lastdigit
  */
 int print_last_digit(int number)
 {
-	return (number % 10);
+	int lastdigit = number % 10;
+	if (number < 0)
+		lastdigit = -1 * lastdigit;
+	return (lastdigit);
 }
