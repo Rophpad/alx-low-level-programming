@@ -12,6 +12,6 @@ int main(void)
 	char text[] = "_putchar\n";
 	int size = sizeof(text);
 
-	write(1, text, size);
+	write(2, text, size);
 	return (0);
 }
