@@ -9,9 +9,10 @@
  */
 int main(void)
 {
-	char text[] = "_putchar\n";
+	char text[] = "_putchar";
 	int size = sizeof(text);
 
 	write(1, text, size);
+	_putchar('\n');
 	return (0);
 }
