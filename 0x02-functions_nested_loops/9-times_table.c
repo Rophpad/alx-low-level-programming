@@ -6,56 +6,34 @@
  * @value: is a integer
  *
  */
-void print(int value)
-{
-	if (value != 0)
-	{
-		print(value / 10);
-		_putchar((value % 10) + '0');
-	}
-}
-
-/**
- * display - display number
- * @n: is the number
- *
- */
-void display(int n)
-{
-	if (n < 10)
-		_putchar('n');
-	else
-		print(n);
-}
-/**
- * times_table - Prints the 9 times table
- *
- */
 void times_table(void)
 {
-	int i, j, k, result;
+	int a, b, c;
 
-	k = 0;
-
-	for (i = 0; i < 10; i++)
+	for (a = 0; a < 10; a++)
 	{
-		j = 0;
-		result = 0;
-		for (j = 0; j < 10; j++)
+		for (b = 0; b < 10; b++)
 		{
-			if (j != 9)
+			c = b * a;
+			if (b == 0)
 			{
-				display(result);
+				_putchar(c + '0');
+			}
+
+			if (c < 10 && b != 0)
+			{
 				_putchar(',');
 				_putchar(' ');
-				result = result + k;
-			}
-			else
+				_putchar(' ');
+				_putchar(c + '0');
+			} else if (c >= 10)
 			{
-				display(result);
-				_putchar('\n');
+				_putchar(',');
+				_putchar(' ');
+				_putchar((c / 10) + '0');
+				_putchar((c % 10) + '0');
 			}
 		}
-		k = k + 1;
+		_putchar('\n');
 	}
 }
