@@ -1,19 +1,32 @@
 #include "main.h"
 
 /**
- * print - Prints number with one or multiple digit
+ * print - Prints number with multiple digit
  * using putchar
  * @value: is a integer
  *
  */
 void print(int value)
 {
-	do{
+	if (value != 0)
+	{
 		print(value / 10);
 		_putchar((value % 10) + '0');
-	}while (value != 0);
+	}
 }
 
+/**
+ * display - display number
+ * @n: is the number
+ *
+ */
+void display(int n)
+{
+	if (n < '10')
+		_putchar(n);
+	else
+		print(n);
+}
 /**
  * times_table - Prints the 9 times table
  *
@@ -32,14 +45,14 @@ void times_table(void)
 		{
 			if (j != 9)
 			{
-				print(result);
+				display(result);
 				_putchar(',');
 				_putchar(' ');
 				result = result + k;
 			}
 			else
 			{
-				print(result);
+				display(result);
 				_putchar('\n');
 			}
 		}
