@@ -22,8 +22,8 @@ void print(int value)
  */
 void display(int n)
 {
-	if (n < '10')
-		_putchar(n);
+	if (n < 10)
+		_putchar('n');
 	else
 		print(n);
 }
