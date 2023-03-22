@@ -8,13 +8,10 @@
  */
 void print(int value)
 {
-	if (value != 0)
-	{
+	do{
 		print(value / 10);
 		_putchar((value % 10) + '0');
-	}
-	else
-		_putchar('0');
+	}while (value != 0);
 }
 
 /**
@@ -31,7 +28,6 @@ void times_table(void)
 	{
 		j = 0;
 		result = 0;
-		
 		for (j = 0; j < 10; j++)
 		{
 			if (j != 9)
