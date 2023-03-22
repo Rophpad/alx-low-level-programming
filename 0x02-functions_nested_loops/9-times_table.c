@@ -1,9 +1,7 @@
 #include "main.h"
 
 /**
- * print - Prints number with multiple digit
- * using putchar
- * @value: is a integer
+ * times_table - print the 9 times table
  *
  */
 void times_table(void)
