@@ -2,8 +2,8 @@
 
 /**
  * print - Prints number with one or multiple digit
- * using putchar 
- * @value is a integer
+ * using putchar
+ * @value: is a integer
  *
  */
 void print(int value)
@@ -24,6 +24,7 @@ void print(int value)
 void times_table(void)
 {
 	int i, j, k, result;
+
 	k = 0;
 
 	for (i = 0; i < 10; i++)
@@ -36,11 +37,14 @@ void times_table(void)
 			if (j != 9)
 			{
 				print(result);
+				_putchar(',');
+				_putchar(' ');
 				result = result + k;
 			}
 			else
 			{
 				print(result);
+				_putchar('\n');
 			}
 		}
 		k = k + 1;
