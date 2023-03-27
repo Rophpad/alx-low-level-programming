@@ -2,7 +2,8 @@
 
 /**
  * reset_to_98 - updates the value a pointer points to to 98
- * @*n: is the pointer
+ * @n: is the variablr of type integer the pointer
+ * *n points to
  *
  */
 void reset_to_98(int *n)
