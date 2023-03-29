@@ -18,6 +18,6 @@ char *_strcat(char *dest, char *src)
 		*(dest + i) = *(src + j);
 		++j;
 		i++;
-	} while(j > 0 && *(scr + j) != '\0');
+	} while (j > 0 && *(scr + j) != '\0');
 	return (dest);
 }
