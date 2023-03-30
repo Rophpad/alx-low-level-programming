@@ -5,7 +5,7 @@
  * @dest: a string
  * @src: second string
  *
- * Return: dest (Adress memory of dest)
+ * Return: dest (Adress memory)
  *
  */
 char *_strcat(char *dest, char *src)
@@ -18,6 +18,6 @@ char *_strcat(char *dest, char *src)
 		*(dest + i) = *(src + j);
 		++j;
 		i++;
-	} while (j > 0 && *(scr + j) != '\0');
+	} while (j > 0 && *(src + j) != '\0');
 	return (dest);
 }
