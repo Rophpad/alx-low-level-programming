@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strchr - locates a character ina string
+ * _strchr - locates a character in a string
  * @s: a string of char
  * @c: a single char to find in s
  *
