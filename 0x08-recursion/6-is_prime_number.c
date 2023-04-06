@@ -17,7 +17,7 @@ int iam_prime(unsigned int n, unsigned int i)
 		else
 			return (0);
 	}
-	return (iam_prime(n + i + 1));
+	return (iam_prime(n, i + 1));
 }
 
 /**
@@ -32,5 +32,5 @@ int is_prime_number(int n)
 {
 	if (n == 0 || n == 1 || n < 0)
 		return (0);
-	return (iam_prime(n, 2);
+	return (iam_prime(n, 2));
 }
