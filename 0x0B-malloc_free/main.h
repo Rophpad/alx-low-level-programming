@@ -1,5 +1,5 @@
 #ifndef MAIN_H
-#define
+#define MAIN_H
 
 char *create_array(unsigned int size, char c);
 
