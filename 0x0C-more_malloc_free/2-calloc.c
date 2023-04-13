@@ -7,6 +7,7 @@
  * @nmemb: members of array
  * @size: the size of each member
  *
+ * Return: nothing
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
