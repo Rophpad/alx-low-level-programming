@@ -9,7 +9,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int o, w, len;
+	int o, w, cls, len = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -21,6 +21,8 @@ int create_file(const char *filename, char *text_content)
 	if (o == -1 || w == -1)
 		return (-1);
 
-	close(o);
+	cls = close(o);
+	if (cls == -1)
+		return (-1);
 	return (1);
 }
