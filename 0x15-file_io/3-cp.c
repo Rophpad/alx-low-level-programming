@@ -1,6 +1,28 @@
 #include "main.h"
 
 /**
+ * create_buffer - Allocates 1024 bytes for a buffer.
+ * @file: The name of the file buffer is storing chars for.
+ *
+ * Return: A pointer to the newly-allocated buffer.
+ */
+char *create_buffer(char *file)
+{
+	char *buffer;
+
+	buffer = malloc(sizeof(char) * 1024);
+
+	if (buffer == NULL)
+	{
+		dprintf(STDERR_FILENO,
+			"Error: Can't write to %s\n", file);
+		exit(99);
+	}
+
+	return (buffer);
+}
+
+/**
  * filefromFail - Display error message if the file isn't readable
  * @file: the file name
  *
@@ -48,7 +70,7 @@ void closeFail(int fd)
 int main(int argc, char *argv[])
 {
 	int from, to, rdfrom, wrto;
-	char buf[1024];
+	char *buf;
 
 	if (argc != 3)
 	{
@@ -59,6 +81,7 @@ int main(int argc, char *argv[])
 		filefromFail(argv[1]);
 	if (argv[2] == NULL)
 		filetoFail(argv[2]);
+	buf = create_buffer(argv[2]);
 	from = open(argv[1], O_RDONLY);
 	rdfrom = read(from, buf, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
