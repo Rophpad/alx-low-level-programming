@@ -28,8 +28,14 @@ void filetoFail(char *file)
  */
 void closeFail(int fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-	exit(100);
+	int cls;
+
+	cls = close(fd);
+	if (cls == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
 
 /**
@@ -41,9 +47,8 @@ void closeFail(int fd)
  */
 int main(int argc, char *argv[])
 {
-	int from, to, rdfrom, wrto, cls;
+	int from, to, rdfrom, wrto;
 	char buf[1024];
-	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -55,30 +60,21 @@ int main(int argc, char *argv[])
 	if (argv[2] == NULL)
 		filetoFail(argv[2]);
 	from = open(argv[1], O_RDONLY);
-	if (from == -1)
-		filefromFail(argv[1]);
-	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
-	if (to == -1)
-		filetoFail(argv[2]);
 	rdfrom = read(from, buf, 1024);
-	if (rdfrom == -1)
-		filefromFail(argv[1]);
-	while (rdfrom > 0)
-	{
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	do {
+		if (from == -1 || rdfrom == -1)
+			filefromFail(argv[1]);
 		wrto = write(to, buf, rdfrom);
-		if (wrto != rdfrom)
+		if (to == -1 || wrto == -1)
 			filetoFail(argv[2]);
 		rdfrom = read(from, buf, 1024);
 		if (rdfrom == -1)
 			filefromFail(argv[1]);
-	}
-	cls = close(from);
-	if (cls == -1)
-		closeFail(from);
-	cls = close(to);
-	if (cls == -1)
-		closeFail(to);
+		to = open(argv[2], O_WRONLY | O_APPEND);
+	} while (rdfrom > 0);
+	closeFail(from);
+	closeFail(to);
 
 	return (0);
-
 }
