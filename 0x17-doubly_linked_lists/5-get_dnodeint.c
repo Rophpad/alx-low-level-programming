@@ -2,7 +2,7 @@
 
 /**
  * get_dnodeint_at_index - Locates a node in a dlistint_t list.
- * @head: The head of the dlistint_t list.
+ * @head: head of the dlistint_t list.
  * @index: The node to locate.
  *
  * Return: If the node does not exist - NULL.
