@@ -25,6 +25,6 @@ void hash_table_delete(hash_table_t *ht)
 			}
 		}
 	}
-	foree(head->array);
+	free(head->array);
 	free(head);
 }
