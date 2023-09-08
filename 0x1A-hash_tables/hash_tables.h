@@ -1,6 +1,10 @@
 #ifndef _HASH_TABLES_
 #define _HASH_TABLES_
 
+/* --------- C library --------- */
+#include <stdio.h>
+#include <stdlib.h>
+
 /* ------------ Data structures ---------- */
 /**
  * struct hash_node_s - Node of a hash table
