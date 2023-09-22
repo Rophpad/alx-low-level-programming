@@ -1,6 +1,12 @@
 #ifndef SORT_H
 #define SORT_H
 
+/* -------- C libraries -------- */
+
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 /* -------- Data structures ------- */
 
 /**
