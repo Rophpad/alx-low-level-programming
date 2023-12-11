@@ -20,7 +20,6 @@ int binary_search(int *array, size_t size, int value)
 		for (start = 0, end = size - 1; end >= start;)
 		{
 			print_arr(array, start, end);
-			
 			mid = start + (end - start) / 2;
 			if (array[mid] == value)
 				return (mid);
